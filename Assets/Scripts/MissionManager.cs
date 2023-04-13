@@ -6,6 +6,7 @@ using TMPro;
 [System.Serializable]
 public class DialogHandler
 {
+    public string titleDesignation;
     public Sprite characterImg;
     public string dialogueTxt;
 }
@@ -13,16 +14,20 @@ public class MissionManager : MonoBehaviour
 {
     public DialogHandler[] dialogs;
     private int dialogIndex;
+    public TextMeshProUGUI titleTxt;
     public TextMeshProUGUI dialogTxt;
     public Image characterImg;
     // Start is called before the first frame update
-   public void NextDialog()
+    private void Start()
+    {
+        ShowDialogUI(dialogIndex);
+    }
+    public void NextDialog()
     {
         if(dialogIndex<dialogs.Length-1)
         {
             dialogIndex++;
-            characterImg.sprite = dialogs[dialogIndex].characterImg;
-            dialogTxt.text = dialogs[dialogIndex].dialogueTxt;
+            ShowDialogUI(dialogIndex);
         }
     }
     public void PreviousDialog()
@@ -30,8 +35,13 @@ public class MissionManager : MonoBehaviour
         if (dialogIndex > 0)
         {
             dialogIndex--;
-            characterImg.sprite = dialogs[dialogIndex].characterImg;
-            dialogTxt.text = dialogs[dialogIndex].dialogueTxt;
+            ShowDialogUI(dialogIndex);
         }
+    }
+    private void ShowDialogUI(int index)
+    {
+        characterImg.sprite = dialogs[index].characterImg;
+        dialogTxt.text = dialogs[index].dialogueTxt;
+        titleTxt.text = dialogs[index].titleDesignation;
     }
 }
