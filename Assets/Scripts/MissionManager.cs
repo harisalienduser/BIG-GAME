@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 using TMPro;
 [System.Serializable]
 public class DialogHandler
@@ -104,5 +104,9 @@ public class MissionManager : MonoBehaviour
     private void SwitchOffLoadingScreen()
     {
         loadingSccreen.SetActive(false);
+    }
+    public void UploadTheSolution()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
