@@ -800,7 +800,23 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: FG_WEBGLFB
+    CloudRendering: FG_WEBGLFB
+    EmbeddedLinux: FG_WEBGLFB
+    GameCoreScarlett: FG_WEBGLFB
+    GameCoreXboxOne: FG_WEBGLFB
+    Lumin: FG_WEBGLFB
+    Nintendo Switch: FG_WEBGLFB
+    PS4: FG_WEBGLFB
+    PS5: FG_WEBGLFB
+    Stadia: FG_WEBGLFB
+    Standalone: FG_WEBGLFB
+    WebGL: FG_WEBGLFB
+    Windows Store Apps: FG_WEBGLFB
+    XboxOne: FG_WEBGLFB
+    iPhone: FG_WEBGLFB
+    tvOS: FG_WEBGLFB
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -817,7 +833,8 @@ PlayerSettings:
   gcIncremental: 1
   assemblyVersionValidation: 1
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    WebGL: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_3D

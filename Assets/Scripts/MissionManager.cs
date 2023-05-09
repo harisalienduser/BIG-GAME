@@ -28,15 +28,16 @@ public class MissionManager : MonoBehaviour
     string jsonURL = "https://drive.google.com/uc?export=download&id=1ABWIlAuxVDHcxSL7CvvwYTKdwpZH_OZG";
     private void Awake()
     {
-        StartCoroutine(GetData(jsonURL));
+      //  StartCoroutine(GetData(jsonURL));
     }
     private void Start()
     {
         ShowDialogUI(dialogIndex);
+        Invoke("SwitchOffLoadingScreen", 2);
     }
     IEnumerator GetData(string url)
     {
-        UnityWebRequest request = UnityWebRequest.Get(url);
+        UnityWebRequest request = UnityWebRequest.Get("");
 
         yield return request.Send();
 
@@ -98,7 +99,7 @@ public class MissionManager : MonoBehaviour
            
 
         }
-        Invoke("SwitchOffLoadingScreen", 2);
+      
         request.Dispose();
     }
     private void SwitchOffLoadingScreen()

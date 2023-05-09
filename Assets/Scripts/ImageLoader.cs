@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
-using Firebase;
-using Firebase.Extensions;
-using Firebase.Storage;
+//using Firebase;
+//using Firebase.Extensions;
+//using Firebase.Storage;
 using System;
 
 public class ImageLoader : MonoBehaviour
 {
     RawImage rawImage;
-    FirebaseStorage storage;
-    StorageReference storageReference;
+    //FirebaseStorage storage;
+    //StorageReference storageReference;
 
     // Start is called before the first frame update
 
