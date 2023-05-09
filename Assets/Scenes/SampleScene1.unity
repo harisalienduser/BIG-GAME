@@ -421,6 +421,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119587199}
   m_CullTransparentMesh: 1
+--- !u!1 &152414056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152414059}
+  - component: {fileID: 152414058}
+  - component: {fileID: 152414057}
+  m_Layer: 5
+  m_Name: ObjectiveHeadImg (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152414057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152414056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &152414058
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152414056}
+  m_CullTransparentMesh: 1
+--- !u!224 &152414059
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152414056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1622394976}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.853, y: -11.073}
+  m_SizeDelta: {x: 605.294, y: 608.853}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &293056653
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &410462993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 6cfd3acce8dc4644ab1feb493b649dce, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2412,6 +2488,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayNameText: {fileID: 1216176275}
+  portraitImg: {fileID: 152414057}
+  characterPortraits:
+  - {fileID: 21300000, guid: 0d086c1929c1242448680593881cc14d, type: 3}
+  - {fileID: 21300000, guid: 954ac5195e61d9649b3ae707f5c268b6, type: 3}
+  - {fileID: 21300000, guid: 6cfd3acce8dc4644ab1feb493b649dce, type: 3}
   inkJSONAsset: {fileID: 4900000, guid: 8eda723f18a50264fb423c126c864903, type: 3}
   canvas: {fileID: 1054858203}
   textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
@@ -2454,13 +2536,13 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: -60
   m_ChildAlignment: 4
-  m_Spacing: 10
+  m_Spacing: 15
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &1056380581
 GameObject:
@@ -2939,7 +3021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 267, y: -35.318}
+  m_AnchoredPosition: {x: 267.00006, y: -35.318}
   m_SizeDelta: {x: 520.87, y: 70.636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216176275
@@ -3329,44 +3411,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1385762428}
-  - component: {fileID: 1385762427}
-  - component: {fileID: 1385762426}
   m_Layer: 0
-  m_Name: Scene Controller
+  m_Name: Dialogue Scene Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1385762426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385762425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce0d8573e1b2ff42af74cb80f3e5ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 27
---- !u!114 &1385762427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385762425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: 8eda723f18a50264fb423c126c864903, type: 3}
-  canvas: {fileID: 1054858203}
-  textPrefab: {fileID: 11456674, guid: 1aab6ef84d87c416f8f0b3e1ef3d77d2, type: 3}
-  buttonPrefab: {fileID: 11455116, guid: 37c108a6c38964f79a6621eccb33ddc1, type: 3}
 --- !u!4 &1385762428
 Transform:
   m_ObjectHideFlags: 0
@@ -4134,6 +4185,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410462993}
+  - {fileID: 152414059}
   m_Father: {fileID: 1402442566}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4226,7 +4278,7 @@ MonoBehaviour:
   loadingSlider: {fileID: 1410030367}
   circularLoader: {fileID: 1828351930}
   dialogs:
-  - titleDesignation: Maj. Rogers
+  - titleDesignation: Dr. Baciu
     characterImg: {fileID: 2800000, guid: 0d086c1929c1242448680593881cc14d, type: 3}
     dialogueTxt: "5 km off the coast of And\xF8ya island in the Arctic circle, part
       of Norway\u2019s Skogvoll natural reserve. The closest settlement is the fishing
@@ -4235,8 +4287,15 @@ MonoBehaviour:
       minutes.  Due to the icy waters, navigation is difficult, and since the ice
       is breaking, the spill can spread fast and reach both the cliff and the nearby
       village of Bleik, affecting local fisheries and tourists. "
-  - titleDesignation: Commander Mara
+  - titleDesignation: Maj Janik
     characterImg: {fileID: 2800000, guid: 954ac5195e61d9649b3ae707f5c268b6, type: 3}
+    dialogueTxt: My belief is that if we live another century or so - I am talking
+      of the common life which is the real life and not of the little separate lives
+      which we live as individuals - and have five hundred a year each of us and
+      rooms of our own; if we have the habit of freedom and the courage to write
+      exactly what we think...
+  - titleDesignation: Dr. Kim
+    characterImg: {fileID: 2800000, guid: 6cfd3acce8dc4644ab1feb493b649dce, type: 3}
     dialogueTxt: My belief is that if we live another century or so - I am talking
       of the common life which is the real life and not of the little separate lives
       which we live as individuals - and have five hundred a year each of us and
