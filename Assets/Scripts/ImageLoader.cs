@@ -14,6 +14,7 @@ public class ImageLoader : MonoBehaviour
     FirebaseStorage storage;
     StorageReference storageReference;
 
+
     // Start is called before the first frame update
 
     IEnumerator LoadImage(string MediaUrl)
@@ -33,18 +34,19 @@ public class ImageLoader : MonoBehaviour
     }
     void Start()
     {
+        //storage = FirebaseStorage.GetInstance("gs://big-game-872ed.appspot.com");
+        //storageReference = storage.GetReferenceFromUrl("gs://big-game-872ed.appspot.com");
         rawImage = gameObject.GetComponent<RawImage>();
 
         StartCoroutine(LoadImage("https://firebasestorage.googleapis.com/v0/b/big-game-872ed.appspot.com/o/intro-1614107130.jpg?alt=media&token=add65ae9-50e8-4be0-87e0-7e1fd7d963f5"));
 
-        /* storage = FirebaseStorage.DefaultInstance;
-        storageReference = storage.GetReferenceFromUrl("gs://big-game-872ed.appspot.com");
+        
 
-        StorageReference image = storageReference.Child("Shrek.png"); 
+        /* StorageReference image = storageReference.Child("Shrek.png"); 
 
-        Debug.Log(image.GetDownloadUrlAsync()); */
+        Debug.Log(image.GetDownloadUrlAsync());
 
-        /* image.GetDownloadUrlAsync().ContinueWithOnMainThread(async task =>
+         image.GetDownloadUrlAsync().ContinueWithOnMainThread(async task =>
         {
             if (!task.IsFaulted || !task.IsCanceled)
             {

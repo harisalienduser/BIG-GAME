@@ -2,9 +2,20 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Ink.Runtime;
 
 public class DialogueManager : MonoBehaviour
 {
+
+    [SerializeField]
+    private TextAsset _InkJsonFile;
+    private Story _StoryScript;
+
+    public TMP_Text dialogueBox;
+    public TMP_Text nametag;
+
+    public Image characterIcon;
+
     public TMP_Text textBox;
     public AudioClip typingClip;
     public AudioSourceGroup audioSourceGroup;
@@ -20,12 +31,63 @@ public class DialogueManager : MonoBehaviour
     [TextArea]
     public string dialogue3;
 
+    private Story currentStory;
+
+    private bool dialogueIsPlaying;
+
     private DialogueVertexAnimator dialogueVertexAnimator;
+
+
+    void Start()
+    {
+        LoadStory();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DisplayNextLine();
+        }
+    }
+
+    void LoadStory()
+    {
+        _StoryScript = new Story(_InkJsonFile.text);
+
+        _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
+        _StoryScript.BindExternalFunction("Icon", (string charName) => CharacterIcon(charName));
+    }
+
+    public void DisplayNextLine()
+    {
+        if (_StoryScript.canContinue)
+        {
+            string text = _StoryScript.Continue(); //Gets Next line
+            text = text?.Trim(); //Remove whitespace
+            dialogueBox.text = text; //Display new text
+        }
+        else
+        {
+            dialogueBox.text = "That's it.";
+        }
+    }
+
+    public void ChangeName(string name)
+    {
+        string SpeakerName = name;
+
+        nametag.text = SpeakerName;
+    }
+
+    public void CharacterIcon(string name)
+    {
+        var charIcon = Resources.Load<Sprite>(""+name);
+    }
+
     void Awake() {
-        dialogueVertexAnimator = new DialogueVertexAnimator(textBox, audioSourceGroup);
-        playDialogue1Button.onClick.AddListener(delegate { PlayDialogue1(); });
-        playDialogue2Button.onClick.AddListener(delegate { PlayDialogue2(); });
-        playDialogue3Button.onClick.AddListener(delegate { PlayDialogue3(); });
+
+       
     }
 
     private void PlayDialogue1() {
